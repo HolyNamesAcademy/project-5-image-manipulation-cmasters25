@@ -187,11 +187,12 @@ public class ImageManipulator {
                 image.SetRGB(i, j, newRGB);
             }
         }
+
         Img halo = new Img("resources/halo.png");
         for(int i = 0; i<image.GetWidth(); i++){
             for(int j = 0; j<image.GetHeight(); j++){
                 RGB rgbImage = image.GetRGB(i, j);
-                RGB rgbHalo = halo.GetRGB(i, j);
+                RGB rgbHalo = halo.GetRGB((int)(((double)i/980)*602), (int)(((double)j/550)*602));
                 int red = (int)(rgbImage.GetRed()*0.65 + rgbHalo.GetRed()*0.35);
                 int green = (int)(rgbImage.GetGreen()*0.65 + rgbHalo.GetGreen()*0.35);
                 int blue = (int)(rgbImage.GetBlue()*0.65 + rgbHalo.GetBlue()*0.35);
@@ -199,11 +200,12 @@ public class ImageManipulator {
                 image.SetRGB(i, j, newRGB);
             }
         }
+
         Img grain = new Img("resources/decorative_grain.png");
         for(int i = 0; i<image.GetWidth(); i++){
             for(int j = 0; j<image.GetHeight();j++){
                 RGB rgbImage = image.GetRGB(i, j);
-                RGB rgbGrain = grain.GetRGB(i, j);
+                RGB rgbGrain = grain.GetRGB((int)(((double)i/980)*602), (int)(((double)j/550)*602));
                 int red = (int)(rgbImage.GetRed()*0.95 + rgbGrain.GetRed()*0.05);
                 int green = (int)(rgbImage.GetGreen()*0.95 + rgbGrain.GetGreen()*0.05);
                 int blue = (int)(rgbImage.GetBlue()*0.95 + rgbGrain.GetBlue()*0.05);
